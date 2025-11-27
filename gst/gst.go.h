@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <gst/gst.h>
 #include <gst/base/base.h>
+#include <gst/video/video-event.h>
 #include <gst/controller/gstinterpolationcontrolsource.h>
 #include <gst/controller/gstdirectcontrolbinding.h>
 

@@ -73,6 +73,14 @@ func NewGapEvent(timestamp, duration ClockTime) *Event {
 	)))
 }
 
+func NewUpstreamForceKeyUnitEvent(runningTime ClockTime, allHeaders bool, count uint) *Event {
+	return FromGstEventUnsafeFull(unsafe.Pointer(C.gst_video_event_new_upstream_force_key_unit(
+		C.GstClockTime(runningTime),
+		gboolean(allHeaders),
+		C.guint(count),
+	)))
+}
+
 // NewInstantRateChangeEvent creates a new instant-rate-change event. This event is sent by seek handlers (e.g. demuxers) when receiving a seek with the
 // GST_SEEK_FLAG_INSTANT_RATE_CHANGE and signals to downstream elements that the playback rate in the existing segment should be immediately multiplied
 // by the rate_multiplier factor.
